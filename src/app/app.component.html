@@ -1,18 +1,4 @@
-<div class="container">
-  <form (ngSubmit)="onSubmit(form)" #form="ngForm">
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Email address</label>
-      <input type="email" email required class="form-control" ngModel name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
-      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-    </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input  required type="password" min="6" class="form-control" ngModel name="password" id="exampleInputPassword1">
-    </div>
-    <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" ngModel name="checkbox" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
-    <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Submit</button>
-  </form>
-</div>
+<a routerLink="/"> Form ||</a>
+<a routerLink="/rform">Reactive Form</a>
+
+<router-outlet></router-outlet>

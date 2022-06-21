@@ -1,0 +1,46 @@
+<div class="container mt-5">
+    <h1>Reactive Form</h1>
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+           <p class="mt-2 text-danger" *ngIf="!addForm.get('email').valid && addForm.get('email').touched">Please write an email address</p>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1">
+            <p class="mt-2 text-danger" *ngIf="addForm.get('password').touched && !addForm.get('password').valid">Password ist nicht gültig</p>
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox"  formControlName="check" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+        <button type="button" class="btn btn-warning mx-3" (click)="updateAddForm()">Update Email</button>
+        <button type="button" class="btn btn-info" (click)="resetForm()">Reset Form</button>
+    </form>
+
+    <hr>
+    <br>
+    <table class="table" *ngIf="user">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Email</th>
+            <th scope="col">Password</th>
+            <th scope="col">Checked</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>{{user.email}}</td>
+            <td>{{user.password}}</td>
+            <td>{{user.check}}</td>
+          </tr>
+          
+        </tbody>
+      </table>
+
+      <p>isValid: {{addForm.valid}}</p>
+</div>

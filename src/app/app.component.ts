@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,14 +10,8 @@ import { NgForm } from '@angular/forms';
 export class AppComponent {
   title = 'AngularForms';
   
+ constructor(){}
 
-  onSubmit(form:NgForm) {
-    if(form.valid){
-      console.log(form);
-    }
-    else{
-      alert('form da eksik bilgiler var')
-    }
-    
-  }
+ 
+  
 }
